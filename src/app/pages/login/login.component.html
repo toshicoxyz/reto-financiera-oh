@@ -1,1 +1,29 @@
-<p>login works!</p>
+<h2>Iniciar sesión</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label>Email:</label>
+  <input formControlName="email" type="email" />
+  <div
+    *ngIf="
+      loginForm.controls['email'].invalid && loginForm.controls['email'].touched
+    "
+  >
+    Email inválido
+  </div>
+
+  <label>Contraseña:</label>
+  <input formControlName="password" type="password" />
+  <div
+    *ngIf="
+      loginForm.controls['password'].invalid &&
+      loginForm.controls['password'].touched
+    "
+  >
+    Contraseña requerida
+  </div>
+
+  <button type="submit">Iniciar sesión</button>
+</form>
+
+<a routerLink="/register">Crear cuenta</a>
+<br />
+<a href="#">¿No puedes iniciar sesión?</a>

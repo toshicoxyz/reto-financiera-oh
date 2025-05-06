@@ -1,1 +1,12 @@
-<p>register works!</p>
+<h2>Crear cuenta</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <label>Email:</label>
+  <input formControlName="email" type="email" />
+
+  <label>Contraseña:</label>
+  <input formControlName="password" type="password" />
+
+  <button type="submit">Registrarse</button>
+</form>
+
+<a routerLink="/login">¿Ya tienes cuenta? Inicia sesión</a>
