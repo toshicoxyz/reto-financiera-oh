@@ -45,11 +45,13 @@ import {
     ]),
   ],
 })
-
 export class AppComponent implements OnInit {
   title = 'reto-financiera-oh';
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+  ) {}
 
   ngOnInit(): void {
     if (this.authService.isAuthenticated()) {
