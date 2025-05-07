@@ -7,10 +7,7 @@ import { AuthService } from './services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-})
+
 export class AppComponent implements OnInit {
   title = 'reto-financiera-oh';
 
