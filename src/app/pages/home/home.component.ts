@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  accordionOpen = false;
+  accordionOpenA = false;
+  accordionOpenB = false;
+  showUserMenu = false;
+  userEmail = '';
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {
+    const user = this.authService.getCurrentUser();
+    this.userEmail = user?.email || 'usuario@example.com';
+  }
 
-  toggleAccordion() {
-    this.accordionOpen = !this.accordionOpen;
+  toggleAccordionA() {
+    this.accordionOpenA = !this.accordionOpenA;
+  }
+
+  toggleAccordionB() {
+    this.accordionOpenB = !this.accordionOpenB;
+  }
+
+  toggleUserMenu() {
+    this.showUserMenu = !this.showUserMenu;
   }
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }

@@ -78,50 +78,22 @@ export class LoginComponent {
         if (!success) {
           this.loginForm.get('email')?.setErrors({ incorrect: true });
           this.loginForm.get('password')?.setErrors({ incorrect: true });
-
-          this.snackBar.open('Correo o contraseña incorrectos', 'Cerrar', {
-            duration: 3000,
-            verticalPosition: 'top',
-            horizontalPosition: 'right',
-            panelClass: ['snack-error'],
-          });
+          this.showMessage('Correo o contraseña incorrectos', true);
           return;
         }
 
-        this.snackBar.open('Inicio de sesión exitoso', 'Cerrar', {
-          duration: 2500,
-          verticalPosition: 'top',
-          horizontalPosition: 'right',
-          panelClass: ['snack-success'],
-        });
-
+        this.showMessage('Inicio de sesión exitoso');
         this.telonState = 'compact';
         setTimeout(() => this.router.navigate(['/home']), 600);
       } else {
         const success = this.authService.register(email, password);
         if (!success) {
           this.loginForm.get('email')?.setErrors({ taken: true });
-
-          this.snackBar.open('El correo ya está registrado', 'Cerrar', {
-            duration: 3000,
-            verticalPosition: 'top',
-            horizontalPosition: 'right',
-            panelClass: ['snack-warning'],
-          });
+          this.showMessage('El correo ya está registrado', true);
           return;
         }
 
-        this.snackBar.open(
-          '¡Registro exitoso! Ahora puedes iniciar sesión.',
-          'Cerrar',
-          {
-            duration: 3000,
-            verticalPosition: 'top',
-            horizontalPosition: 'right',
-            panelClass: ['snack-success'],
-          }
-        );
-
+        this.showMessage('¡Registro exitoso! Ahora puedes iniciar sesión.');
         setTimeout(() => {
           this.setMode('signIn');
           this.loginForm.reset();
@@ -129,12 +101,7 @@ export class LoginComponent {
       }
     } catch (error) {
       console.error(error);
-      this.snackBar.open('Ocurrió un error inesperado', 'Cerrar', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'right',
-        panelClass: ['snack-error'],
-      });
+      this.showMessage('Ocurrió un error inesperado', true);
     }
   }
 }

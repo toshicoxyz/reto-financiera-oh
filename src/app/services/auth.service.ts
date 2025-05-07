@@ -41,6 +41,11 @@ export class AuthService {
     return true;
   }
 
+  getCurrentUser() {
+    const userStr = localStorage.getItem('user');
+    return userStr ? JSON.parse(userStr) : null;
+  }
+
   login(email: string, password: string): boolean {
     const users = this.getUsers();
 
@@ -50,14 +55,19 @@ export class AuthService {
     const decryptedPassword = this.decrypt(user.password);
     if (decryptedPassword !== password) return false;
 
+    // ✅ Guardar el usuario actual
+    localStorage.setItem('user', JSON.stringify({ email }));
+
     // Genera token simulado con duración de 5 minutos
     const expires = new Date(Date.now() + 5 * 60 * 1000).toUTCString();
     document.cookie = `${this.TOKEN_KEY}=some_token; expires=${expires}; path=/`;
+
     return true;
   }
 
   logout(): void {
     document.cookie = `${this.TOKEN_KEY}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    localStorage.removeItem('user');
   }
 
   isAuthenticated(): boolean {

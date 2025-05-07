@@ -1,23 +1,109 @@
-<h2>Bienvenido a la Página de Inicio</h2>
-<button  (click)="logout()">Cerrar sesión</button>
+<!-- NAVBAR -->
+<nav class="flex justify-between items-center bg-black px-4 py-2 shadow-md">
+  <div class="flex items-center space-x-4">
+    <img
+      src="assets/oh.svg"
+      alt="Logo"
+      class="scale-90 translate-y-5"
+      width="125"
+      height="75"
+    />
 
-<!-- Overlays -->
-<div class="overlay-container">
-  <div class="overlay">Overlay 1</div>
-  <div class="overlay">Overlay 2</div>
-  <div class="overlay">Overlay 3</div>
-  <div class="overlay">Overlay 4</div>
-</div>
-
-<!-- Acordeón -->
-<div class="accordion">
-  <div class="accordion-item">
-    <button (click)="toggleAccordion()" class="accordion-header">
-      Sección Acordeón
-    </button>
-    <div class="accordion-body" *ngIf="accordionOpen">
-      <p>Contenido del acordeón visible al hacer clic.</p>
+    <div
+      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
+    >
+      Espacios de trabajo
+    </div>
+    <div
+      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
+    >
+      Reciente
+    </div>
+    <div
+      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
+    >
+      Mercado
+    </div>
+    <div
+      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
+    >
+      Plantillas
     </div>
   </div>
 
+  <div class="relative">
+    <button
+      (click)="toggleUserMenu()"
+      class="bg-red-600 text-white px-3 py-1 rounded transition"
+    >
+      Usuario ▼
+    </button>
+    <div
+      *ngIf="showUserMenu"
+      class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-md z-50"
+    >
+      <p class="px-4 py-2 text-sm text-gray-600 border-b">{{ userEmail }}</p>
+      <button
+        class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+      >
+        Perfil
+      </button>
+      <button
+        class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+      >
+        Ajustes
+      </button>
+      <button
+        class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+      >
+        Ganancias
+      </button>
+      <button
+        (click)="logout()"
+        class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+      >
+        Cerrar sesión
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN LAYOUT -->
+<div class="flex h-[calc(100vh-56px)]">
+  <!-- SIDEBAR -->
+  <aside class="w-64 bg-gray-100 p-4 space-y-4 overflow-y-auto">
+    <div>
+      <button
+        (click)="toggleAccordionA()"
+        class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300"
+      >
+        Opciones A
+      </button>
+      <div *ngIf="accordionOpenA" class="pl-4 mt-2 text-sm text-gray-700">
+        <p>Contenido de la sección A.</p>
+      </div>
+    </div>
+    <div>
+      <button
+        (click)="toggleAccordionB()"
+        class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300"
+      >
+        Opciones B
+      </button>
+      <div *ngIf="accordionOpenB" class="pl-4 mt-2 text-sm text-gray-700">
+        <p>Contenido de la sección B.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT AREA -->
+  <section class="flex-1 bg-gray-50 p-6 overflow-y-auto">
+    <h2 class="text-2xl font-bold mb-4">Bienvenido a la Página de Inicio</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+    </div>
+  </section>
 </div>
