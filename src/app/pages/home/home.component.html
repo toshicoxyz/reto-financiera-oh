@@ -6,7 +6,7 @@
     <img src="assets/oh.svg" alt="Logo" class="h-10" />
 
     <!-- Dropdown Items -->
-    <div class="relative">
+    <div class="relative" #dropdownWorkspaces>
       <button
         (click)="toggleDropdown('workspaces')"
         class="text-sm text-white px-2 py-1 rounded hover:bg-gray-700"
@@ -17,19 +17,20 @@
         *ngIf="dropdownOpen.workspaces"
         class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
       >
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
-          >Mi espacio</a
-        >
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
-          >Nuevo espacio</a
-        >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Mi espacio
+        </a>
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Nuevo espacio
+        </a>
       </div>
     </div>
+
     <!-- Reciente -->
-    <div class="relative">
+    <div class="relative" #dropdownRecent>
       <button
         (click)="toggleDropdown('recent')"
-        class="text-sm text-white px-2 py-1 rounded cursor-pointer hover:bg-gray-700"
+        class="text-sm text-white px-2 py-1 rounded hover:bg-gray-700"
       >
         Reciente
       </button>
@@ -37,20 +38,20 @@
         *ngIf="dropdownOpen.recent"
         class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
       >
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-          Proyecto 1
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-          Proyecto 2
-        </a>
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Proyecto 1</a
+        >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Proyecto 2</a
+        >
       </div>
     </div>
 
-    <!-- Mercado -->
-    <div class="relative">
+    <!-- Marketplace -->
+    <div class="relative" #dropdownMarketplace>
       <button
         (click)="toggleDropdown('marketplace')"
-        class="text-sm text-white px-2 py-1 rounded cursor-pointer hover:bg-gray-700"
+        class="text-sm text-white px-2 py-1 rounded hover:bg-gray-700"
       >
         Mercado
       </button>
@@ -58,20 +59,20 @@
         *ngIf="dropdownOpen.marketplace"
         class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
       >
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-          Plantillas premium
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-          Extensiones
-        </a>
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Plantillas premium</a
+        >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Extensiones</a
+        >
       </div>
     </div>
 
-    <!-- Plantillas -->
-    <div class="relative">
+    <!-- Templates -->
+    <div class="relative" #dropdownTemplates>
       <button
         (click)="toggleDropdown('templates')"
-        class="text-sm text-white px-2 py-1 rounded cursor-pointer hover:bg-gray-700"
+        class="text-sm text-white px-2 py-1 rounded hover:bg-gray-700"
       >
         Plantillas
       </button>
@@ -79,12 +80,12 @@
         *ngIf="dropdownOpen.templates"
         class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
       >
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-          Scrum
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-          Kanban
-        </a>
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Scrum</a
+        >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Kanban</a
+        >
       </div>
     </div>
   </div>
@@ -131,6 +132,7 @@
 <div class="flex h-[calc(100vh-56px)] mt-14">
   <!-- SIDEBAR -->
   <aside
+    style="height: 100%"
     class="fixed top-14 left-0 w-64 h-[calc(100vh-56px)] bg-gray-100 p-4 space-y-4 overflow-y-auto hidden md:block"
   >
     <!-- Accordion A -->
@@ -223,7 +225,9 @@
   </aside>
 
   <!-- MAIN CONTENT -->
-  <section class="flex-1 ml-0 md:ml-64 bg-gray-50 p-6 overflow-y-auto h-[calc(100vh-56px)]">
+  <section
+    class="flex-1 ml-0 md:ml-64 bg-gray-50 p-6 overflow-y-auto h-[calc(100vh-56px)]"
+  >
     <h2 class="text-2xl font-bold mb-4">Bienvenido a la Página de Inicio</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
