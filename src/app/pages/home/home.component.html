@@ -132,29 +132,16 @@
 <div class="flex h-[calc(100vh-56px)] mt-14">
   <!-- SIDEBAR -->
   <aside
-    style="height: 100%"
+   style="height: 100%;"
     class="fixed top-14 left-0 w-64 h-[calc(100vh-56px)] bg-gray-100 p-4 space-y-4 overflow-y-auto hidden md:block"
   >
-    <!-- Accordion A -->
     <div>
       <button
         (click)="toggleAccordionA()"
         class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300 flex items-center space-x-2"
       >
-        <svg
-          class="w-5 h-5 text-gray-700"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          />
-        </svg>
-        <span>Opciones A</span>
+        <mat-icon class="text-gray-700">menu</mat-icon>
+        <span>Gestión Operativa</span>
       </button>
       <div
         *ngIf="accordionOpenA"
@@ -163,42 +150,25 @@
         <div
           class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M3 3h14v14H3z" />
-          </svg>
+          <mat-icon class="text-red-600">dashboard</mat-icon>
           <span>Dashboard</span>
         </div>
         <div
           class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M9 12l2 2 4-4" />
-          </svg>
+          <mat-icon class="text-green-600">check_circle_outline</mat-icon>
           <span>Tareas</span>
         </div>
       </div>
     </div>
 
-    <!-- Accordion B -->
     <div>
       <button
         (click)="toggleAccordionB()"
         class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300 flex items-center space-x-2"
       >
-        <svg
-          class="w-5 h-5 text-gray-700"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7"
-          />
-        </svg>
-        <span>Opciones B</span>
+        <mat-icon class="text-gray-700">folder</mat-icon>
+        <span>Administración</span>
       </button>
       <div
         *ngIf="accordionOpenB"
@@ -207,17 +177,13 @@
         <div
           class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 5h16v10H2z" />
-          </svg>
+          <mat-icon class="text-blue-600">insert_chart_outlined</mat-icon>
           <span>Reportes</span>
         </div>
         <div
           class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
         >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 2l6 6-6 6-6-6z" />
-          </svg>
+          <mat-icon class="text-gray-600">settings</mat-icon>
           <span>Configuración</span>
         </div>
       </div>
