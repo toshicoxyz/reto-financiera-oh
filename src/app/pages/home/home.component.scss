@@ -36,3 +36,18 @@
   padding: 1rem;
   background-color: #fff;
 }
+
+.logout {
+  background-color: crimson;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  float: right;
+  margin-bottom: 1rem;
+
+  &:hover {
+    background-color: darkred;
+  }
+}
