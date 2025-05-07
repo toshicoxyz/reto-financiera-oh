@@ -12,10 +12,20 @@ export class HomeComponent {
   accordionOpenB = false;
   showUserMenu = false;
   userEmail = '';
+  dropdownOpen = {
+    workspaces: false,
+    recent: false,
+    marketplace: false,
+    templates: false
+  };
 
   constructor(private authService: AuthService, private router: Router) {
     const user = this.authService.getCurrentUser();
     this.userEmail = user?.email || 'usuario@example.com';
+  }
+
+  toggleDropdown(menu: keyof typeof this.dropdownOpen) {
+    this.dropdownOpen[menu] = !this.dropdownOpen[menu];
   }
 
   toggleAccordionA() {

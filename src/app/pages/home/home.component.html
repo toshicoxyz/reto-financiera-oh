@@ -1,36 +1,95 @@
 <!-- NAVBAR -->
-<nav class="flex justify-between items-center bg-black px-4 py-2 shadow-md">
+<nav
+  class="flex justify-between items-center bg-black px-4 py-2 shadow-md w-full"
+>
   <div class="flex items-center space-x-4">
-    <img
-      src="assets/oh.svg"
-      alt="Logo"
-      class="scale-90 translate-y-5"
-      width="125"
-      height="75"
-    />
+    <img src="assets/oh.svg" alt="Logo" class="h-10" />
 
-    <div
-      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
-    >
-      Espacios de trabajo
+    <!-- Dropdown Items -->
+    <div class="relative">
+      <button
+        (click)="toggleDropdown('workspaces')"
+        class="text-sm text-white px-2 py-1 rounded hover:bg-gray-700"
+      >
+        Espacios de trabajo
+      </button>
+      <div
+        *ngIf="dropdownOpen.workspaces"
+        class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
+      >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Mi espacio</a
+        >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+          >Nuevo espacio</a
+        >
+      </div>
     </div>
-    <div
-      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
-    >
-      Reciente
+    <!-- Reciente -->
+    <div class="relative">
+      <button
+        (click)="toggleDropdown('recent')"
+        class="text-sm text-white px-2 py-1 rounded cursor-pointer hover:bg-gray-700"
+      >
+        Reciente
+      </button>
+      <div
+        *ngIf="dropdownOpen.recent"
+        class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
+      >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Proyecto 1
+        </a>
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Proyecto 2
+        </a>
+      </div>
     </div>
-    <div
-      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
-    >
-      Mercado
+
+    <!-- Mercado -->
+    <div class="relative">
+      <button
+        (click)="toggleDropdown('marketplace')"
+        class="text-sm text-white px-2 py-1 rounded cursor-pointer hover:bg-gray-700"
+      >
+        Mercado
+      </button>
+      <div
+        *ngIf="dropdownOpen.marketplace"
+        class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
+      >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Plantillas premium
+        </a>
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Extensiones
+        </a>
+      </div>
     </div>
-    <div
-      class="text-sm text-white hover:bg-gray-100 px-2 py-1 rounded cursor-pointer"
-    >
-      Plantillas
+
+    <!-- Plantillas -->
+    <div class="relative">
+      <button
+        (click)="toggleDropdown('templates')"
+        class="text-sm text-white px-2 py-1 rounded cursor-pointer hover:bg-gray-700"
+      >
+        Plantillas
+      </button>
+      <div
+        *ngIf="dropdownOpen.templates"
+        class="absolute mt-1 bg-white text-black shadow-md rounded w-48 z-50"
+      >
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Scrum
+        </a>
+        <a class="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
+          Kanban
+        </a>
+      </div>
     </div>
   </div>
 
+  <!-- User Menu -->
   <div class="relative">
     <button
       (click)="toggleUserMenu()"
@@ -69,34 +128,99 @@
 </nav>
 
 <!-- MAIN LAYOUT -->
-<div class="flex h-[calc(100vh-56px)]">
+<div class="flex flex-col h-[calc(100vh-56px)] md:flex-row">
   <!-- SIDEBAR -->
-  <aside class="w-64 bg-gray-100 p-4 space-y-4 overflow-y-auto">
+  <aside class="w-full md:w-64 bg-gray-100 p-4 space-y-4 overflow-y-auto">
+    <!-- Accordion A -->
     <div>
       <button
         (click)="toggleAccordionA()"
-        class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300"
+        class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300 flex items-center space-x-2"
       >
-        Opciones A
+        <svg
+          class="w-5 h-5 text-gray-700"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"
+          />
+        </svg>
+        <span>Opciones A</span>
       </button>
-      <div *ngIf="accordionOpenA" class="pl-4 mt-2 text-sm text-gray-700">
-        <p>Contenido de la sección A.</p>
+      <div
+        *ngIf="accordionOpenA"
+        class="pl-4 mt-2 space-y-2 text-sm text-gray-700"
+      >
+        <div
+          class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M3 3h14v14H3z" />
+          </svg>
+          <span>Dashboard</span>
+        </div>
+        <div
+          class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 12l2 2 4-4" />
+          </svg>
+          <span>Tareas</span>
+        </div>
       </div>
     </div>
+
+    <!-- Accordion B -->
     <div>
       <button
         (click)="toggleAccordionB()"
-        class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300"
+        class="w-full text-left font-semibold py-2 px-3 bg-gray-200 rounded hover:bg-gray-300 flex items-center space-x-2"
       >
-        Opciones B
+        <svg
+          class="w-5 h-5 text-gray-700"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7"
+          />
+        </svg>
+        <span>Opciones B</span>
       </button>
-      <div *ngIf="accordionOpenB" class="pl-4 mt-2 text-sm text-gray-700">
-        <p>Contenido de la sección B.</p>
+      <div
+        *ngIf="accordionOpenB"
+        class="pl-4 mt-2 space-y-2 text-sm text-gray-700"
+      >
+        <div
+          class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 5h16v10H2z" />
+          </svg>
+          <span>Reportes</span>
+        </div>
+        <div
+          class="flex items-center space-x-2 hover:bg-gray-200 p-2 rounded cursor-pointer"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2l6 6-6 6-6-6z" />
+          </svg>
+          <span>Configuración</span>
+        </div>
       </div>
     </div>
   </aside>
 
-  <!-- CONTENT AREA -->
+  <!-- MAIN CONTENT -->
   <section class="flex-1 bg-gray-50 p-6 overflow-y-auto">
     <h2 class="text-2xl font-bold mb-4">Bienvenido a la Página de Inicio</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
