@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <nav
-  class="flex justify-between items-center bg-black px-4 py-2 shadow-md w-full"
+  class="fixed top-0 left-0 right-0 flex justify-between items-center bg-black px-4 py-2 shadow-md h-14 z-50"
 >
   <div class="flex items-center space-x-4">
     <img src="assets/oh.svg" alt="Logo" class="h-10" />
@@ -128,9 +128,11 @@
 </nav>
 
 <!-- MAIN LAYOUT -->
-<div class="flex flex-col h-[calc(100vh-56px)] md:flex-row">
+<div class="flex h-[calc(100vh-56px)] mt-14">
   <!-- SIDEBAR -->
-  <aside class="w-full md:w-64 bg-gray-100 p-4 space-y-4 overflow-y-auto">
+  <aside
+    class="fixed top-14 left-0 w-64 h-[calc(100vh-56px)] bg-gray-100 p-4 space-y-4 overflow-y-auto hidden md:block"
+  >
     <!-- Accordion A -->
     <div>
       <button
@@ -221,9 +223,85 @@
   </aside>
 
   <!-- MAIN CONTENT -->
-  <section class="flex-1 bg-gray-50 p-6 overflow-y-auto">
+  <section class="flex-1 ml-0 md:ml-64 bg-gray-50 p-6 overflow-y-auto h-[calc(100vh-56px)]">
     <h2 class="text-2xl font-bold mb-4">Bienvenido a la Página de Inicio</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
+      <div class="bg-white rounded shadow p-4 text-center">Overlay 4</div>
       <div class="bg-white rounded shadow p-4 text-center">Overlay 1</div>
       <div class="bg-white rounded shadow p-4 text-center">Overlay 2</div>
       <div class="bg-white rounded shadow p-4 text-center">Overlay 3</div>
