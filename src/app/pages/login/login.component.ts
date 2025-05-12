@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import {
@@ -24,13 +24,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   ],
 })
 export class LoginComponent {
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   mode: 'signIn' | 'signUp' = 'signIn';
   telonState: 'full' | 'compact' = 'full';
   successMessage: string = '';
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private authService: AuthService,
     private router: Router,
     private snackBar: MatSnackBar
