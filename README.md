@@ -1,10 +1,48 @@
 # Reto Financiera Oh
 
-[![Angular](https://img.shields.io/badge/Angular-13-DD0031?style=flat-square&logo=angular&logoColor=white)](https://angular.io/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Material Icons](https://img.shields.io/badge/Material_Icons-v5-26A69A?style=flat-square&logo=google-material-design&logoColor=white)](https://fonts.google.com/icons)
+[![Angular](https://img.shields.io/badge/Angular-16-DD0031?style=flat-square&logo=angular&logoColor=white)](https://angular.io/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-2.x-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Angular Material](https://img.shields.io/badge/Angular_Material-16-1976D2?style=flat-square&logo=angular&logoColor=white)](https://material.angular.io/)
 
-> Una descripción breve y atractiva de tu proyecto financiero. Menciona su propósito principal y las tecnologías clave utilizadas.
+## 📊 Descripción
+
+**Reto Financiera Oh** es una aplicación desarrollada como **prueba técnica** para evaluar habilidades avanzadas en desarrollo frontend con **Angular**.
+
+➡️ Como parte del proceso, se realizó la **migración completa del proyecto desde Angular 13 a Angular 16**, cumpliendo con los lineamientos solicitados en la evaluación.
+
+El proyecto simula un **dashboard financiero profesional**, inspirado en Trello, con un enfoque en:
+
+- Buenas prácticas de **arquitectura Angular**.
+- **UI/UX moderno y responsivo** usando Tailwind.
+- Manejo de **autenticación local encriptada**.
+- Componentes reutilizables y accesibles.
+
+## 🛠️ Tecnologías utilizadas
+
+- ⚙️ **Angular 16.x (Migrado desde v13)** ✅
+- 🎨 **Tailwind CSS 2.x** (utilizado para diseño moderno y responsive)
+- 🧩 **Angular Material Icons** (para iconografía profesional)
+- 🔐 **CryptoJS** (encriptación local AES para login/register)
+- 🔔 **MatSnackBar** (feedback visual, actualizado sin legacy)
+- 📦 **LocalStorage Simulation** (persistencia de usuarios en frontend)
+- 🖥️ **Responsive Design con Flexbox & Tailwind**
+
+## 🚀 Funcionalidades principales
+
+| Función | Descripción |
+|---------|-------------|
+| 🔑 **Login & Registro** | Validaciones con encriptación AES, gestión de múltiples usuarios locales |
+| 🏠 **Home Dashboard** | Vista tipo Trello con navbar fijo, sidebar responsivo y estadísticas |
+| 🎨 **UI/UX Profesional** | Adaptación a escritorio y móvil con Tailwind CSS |
+| ⚙️ **Menús desplegables** | Lógica para dropdowns personalizados con cierre al hacer clic fuera |
+| 🔔 **Notificaciones visuales** | Implementadas con MatSnackBar (Angular 16 actualizado) |
+
+## 📝 Notas técnicas de migración
+- ✔️ Migración gradual de Angular CLI, Core y CDK hasta versión **16.x**.
+- ✔️ Reemplazo de **MatLegacySnackBar ➔ MatSnackBar** actualizado.
+- ✔️ Refactor de dependencias obsoletas (ngx-toastr removido).
+- ✔️ Configuración de styles y build optimizado para Angular 16.
+- ✔️ Uso de **Tailwind** como base de diseño responsive.
 
 ## Vistas Previas
 
